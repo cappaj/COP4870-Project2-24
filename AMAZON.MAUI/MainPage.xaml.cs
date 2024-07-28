@@ -1,4 +1,7 @@
-﻿namespace AMAZON.MAUI
+﻿
+
+
+namespace AMAZON.MAUI
 {
     public partial class MainPage : ContentPage
     {
