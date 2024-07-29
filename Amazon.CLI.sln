@@ -7,7 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amazon.CLI", "Amazon.CLI\Am
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amazon.Library", "Amazon.Library\Amazon.Library.csproj", "{1D1EFD9D-0619-4DD2-B280-7452FA3A792F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMAZON.MAUI", "AMAZON.MAUI\AMAZON.MAUI.csproj", "{AC03124A-6FE6-49B1-AF2F-07AB5A0FAD37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMAZON.MAUI", "AMAZON.MAUI\AMAZON.MAUI.csproj", "{AC03124A-6FE6-49B1-AF2F-07AB5A0FAD37}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1D1EFD9D-0619-4DD2-B280-7452FA3A792F} = {1D1EFD9D-0619-4DD2-B280-7452FA3A792F}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
