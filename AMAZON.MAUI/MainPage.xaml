@@ -24,9 +24,11 @@
                 Text="Manage Inventory" 
                 Command="{Binding NavigateToInventoryCommand}" 
                 SemanticProperties.Hint="       "
-                HorizontalOptions="Fill" />
+                HorizontalOptions="Fill"
+                Clicked="InventoryClicked"/>
             
-            <Button Text="Shop" Command="{Binding NavigateToShopCommand}" />
+            <Button Text="Shop" Command="{Binding NavigateToShopCommand}"
+                    Clicked="ShopClicked"/>
         </StackLayout>
     </ScrollView>
 

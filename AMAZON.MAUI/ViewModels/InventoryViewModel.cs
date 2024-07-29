@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace AMAZON.MAUI.ViewModels
 {
-    internal class InventoryViewModel
+    public class InventoryViewModel
     {
 
     }

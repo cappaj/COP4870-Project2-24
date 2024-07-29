@@ -14,5 +14,16 @@ namespace AMAZON.MAUI
             BindingContext = new MainViewModel();
 
         }
+        
+        private void InventoryClicked(object sender, EventArgs e)
+        {
+            Shell.Current.GoToAsync("//InventoryPage");
+        }
+
+        private void ShopClicked(object sender, EventArgs e)
+        {
+            Shell.Current.GoToAsync("//ShopPage");
+        }
+
     }
 }
