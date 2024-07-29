@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
+using AMAZON.MAUI.ViewModels;
 
 namespace AMAZON.MAUI
 {
@@ -12,14 +14,22 @@ namespace AMAZON.MAUI
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.AddSingleton<InventoryService>();
+            builder.Services.AddSingleton<MainViewModel>();
+            builder.Services.AddSingleton<InventoryViewModel>();
+            builder.Services.AddSingleton<ShopViewModel>();
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
         }
+    }
+
+    internal class InventoryService
+    {
     }
 }

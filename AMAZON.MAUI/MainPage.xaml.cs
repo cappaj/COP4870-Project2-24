@@ -1,25 +1,18 @@
-﻿namespace AMAZON.MAUI
+﻿using AMAZON.MAUI.ViewModels;
+using System.Net.Security;
+
+namespace AMAZON.MAUI
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
+       // int count = 0;
+       //idk if needed
         public MainPage()
         {
+
             InitializeComponent();
-        }
+            BindingContext = new MainViewModel();
 
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
         }
     }
-
 }
