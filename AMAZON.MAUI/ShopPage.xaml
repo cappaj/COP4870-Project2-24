@@ -12,6 +12,7 @@
         </ListView>
         <Button Text="Add to Cart" Command="{Binding AddToCartCommand}" />
         <Label Text="{Binding TotalPrice, StringFormat='Total: {0:C}'}" />
+        <Button Text="Back" Clicked="BackClicked"/>
     </StackLayout>
 
 </ContentPage>

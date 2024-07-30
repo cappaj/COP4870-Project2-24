@@ -63,6 +63,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\Amazon.Library\Amazon.Library.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Compile Update="InventoryPage.xaml.cs">
 	    <DependentUpon>InventoryPage.xaml</DependentUpon>
 	  </Compile>

@@ -12,6 +12,7 @@
         </ListView>
         <Button Text="Add Item" Command="{Binding AddItemCommand}" />
         <Button Text="Delete Item" Command="{Binding DeleteItemCommand}" />
+        <Button Text="Back" Clicked="BackClicked"/>
     </StackLayout>
 
 </ContentPage>
