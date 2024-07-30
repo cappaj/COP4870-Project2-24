@@ -3,10 +3,28 @@
              x:Class="AMAZON.MAUI.InventoryPage">
 
     <StackLayout>
-        <ListView ItemsSource="{Binding InventoryItems}">
+        <ListView ItemsSource="{Binding Path=InventoryItems}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Name}" Detail="{Binding Price}" />
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="8*"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Column="0">
+                                <Label Text="{Binding Path = Display}"/>
+                            </Grid>
+                            
+                            <Grid Column="1">
+                                <Button Text="Edit"/>
+                            </Grid>
+                            <Grid Column="2">
+                                <Button Text="Delete"/>
+                            </Grid>
+                        </Grid>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

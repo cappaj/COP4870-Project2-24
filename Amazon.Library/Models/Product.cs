@@ -25,6 +25,21 @@
             Id = p.Id;
             Quantity = p.Quantity;
         }
+
+        public Product() { }
+
+        public string Display
+        {
+            get { return ToString(); }
+        }
+
+
+        public override string ToString()
+        {
+            return $"{Id}. {Name}\t{Description}\t\t${Price}\t\t{Quantity}";
+        }
+
+
     }
 
     public class Receipt
@@ -37,7 +52,7 @@
 
     public class ReceiptItem
     {
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public int Quantity { get; set; }
         public decimal Price { get; set; }
         public decimal ItemTotal => Quantity * Price;
