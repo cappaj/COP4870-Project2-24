@@ -13,12 +13,10 @@
                 Style="{StaticResource Headline}" />
 
             <Label
-                Text="            "
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+                Text="              "
+                Style="{StaticResource SubHeadline}" />
 
             <Button
-                x:Name="CounterBtn"
                 Text="Manage Inventory" 
                 Command="{Binding NavigateToInventoryCommand}" 
                 HorizontalOptions="Fill"

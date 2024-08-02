@@ -5,8 +5,6 @@ namespace AMAZON.MAUI
 {
     public partial class MainPage : ContentPage
     {
-       // int count = 0;
-       //idk if needed
         public MainPage()
         {
 
