@@ -30,17 +30,28 @@ namespace Amazon.Library.Services
 
         public void AddOrUpdate(Product product)
         {
+            /*
             var existingProduct = products.FirstOrDefault(p => p.Id == product.Id);
             if (existingProduct != null)
             {
                 products.Remove(existingProduct);
             }
+            */
+            var Add = false;
+
+           
 
             if (product.Id == 0)
             {
+           
+                Add = true;
                 product.Id = LastId + 1;
             }
-            products.Add(product);
+
+            if (Add)
+            {
+                products.Add(product);
+            }
         }
 
         public void Delete(int productId)

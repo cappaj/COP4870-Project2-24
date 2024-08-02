@@ -31,5 +31,10 @@ namespace AMAZON.MAUI
             (BindingContext as InventoryViewViewModel).RefreshInventoryList();
 
         }
+
+        private void OnArriving(object sender, NavigatedToEventArgs e)
+        {
+            (BindingContext as InventoryViewViewModel).RefreshInventoryList();
+        }
     }
 }

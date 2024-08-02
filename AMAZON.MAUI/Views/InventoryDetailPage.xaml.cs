@@ -1,8 +1,11 @@
 using AMAZON.MAUI.ViewModels;
+using System.ComponentModel;
 namespace AMAZON.MAUI.Views;
 
+[QueryProperty(nameof(ProductId), "ProductId")]
 public partial class InventoryDetailPage : ContentPage
 {
+
 
   
 
@@ -53,5 +56,10 @@ public partial class InventoryDetailPage : ContentPage
     {
         (BindingContext as InventoryViewModel).AddOrUpdate();
         Shell.Current.GoToAsync("//InventoryPage");
+    }
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+
     }
 }

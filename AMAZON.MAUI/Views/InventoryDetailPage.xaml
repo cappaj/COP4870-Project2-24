@@ -47,6 +47,7 @@
                             </Grid>
                         </Grid>
         <Button Text="Ok" Clicked="AddClicked"/>
+        <Button Text="Back" Clicked="BackClicked"/>
         <Button Text="Return to Main Page" Clicked="ExitClicked"/>
     </VerticalStackLayout>
 </ContentPage>
