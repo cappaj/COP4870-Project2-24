@@ -24,7 +24,7 @@ namespace AMAZON.MAUI.ViewModels
 
         private async void OnNavigateToShop()
         {
-            
+            await Shell.Current.GoToAsync("ShopPage");
         }
     }
 }

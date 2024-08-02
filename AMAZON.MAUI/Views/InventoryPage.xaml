@@ -18,18 +18,20 @@
                             </Grid>
                             
                             <Grid Column="1">
-                                <Button Text="Edit"/>
+                                <Button Text="Edit" Command="{Binding Path = EditCommand}"
+                                                        CommandParameter="{Binding}" Clicked="EditClicked"/>
                             </Grid>
                             <Grid Column="2">
-                                <Button Text="Delete"/>
+                                <Button Text="Delete" Command="{Binding Path = DeleteCommand}"
+                                                    CommandParameter="{Binding}"
+                                                       Clicked="DeleteClicked"/>
                             </Grid>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Text="Add Item" Command="{Binding AddItemCommand}" />
-        <Button Text="Delete Item" Command="{Binding DeleteItemCommand}" />
+        <Button Text="Add Item" Clicked="AddClicked" />
         <Button Text="Back" Clicked="BackClicked"/>
     </StackLayout>
 

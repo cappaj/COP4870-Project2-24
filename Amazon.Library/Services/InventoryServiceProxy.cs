@@ -4,6 +4,12 @@ namespace Amazon.Library.Services
 {
     public class InventoryServiceProxy
     {
+
+        private int LastId
+        {
+            get { return Products.Any() ? Products.Select(c => c.Id).Max() : 1; }
+        }
+
         private static readonly InventoryServiceProxy instance = new InventoryServiceProxy();
         private List<Product> products = new List<Product> { new Product { Id = 1, Name = "Raybans", Description = "Sunglasses", Price = 49.99M, Quantity = 16 },
                                                              new Product { Id = 2, Name = "KitchenAid Set", Description = "Kitchenware set", Price = 27.49M, Quantity = 4 },
@@ -28,6 +34,11 @@ namespace Amazon.Library.Services
             if (existingProduct != null)
             {
                 products.Remove(existingProduct);
+            }
+
+            if (product.Id == 0)
+            {
+                product.Id = LastId + 1;
             }
             products.Add(product);
         }

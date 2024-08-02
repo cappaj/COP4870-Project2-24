@@ -30,7 +30,7 @@ namespace AMAZON.MAUI.ViewModels
         private void OnAddToCart(InventoryItem item)
         {
             CartItems.Add(item);
-            OnPropertyChanged(nameof(TotalPrice));
+            NotifyPropertyChanged(nameof(TotalPrice));
         }
 
         public double TotalPrice => CartItems.Sum(item => item.Price);

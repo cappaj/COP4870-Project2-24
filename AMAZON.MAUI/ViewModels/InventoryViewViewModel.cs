@@ -24,7 +24,11 @@ namespace AMAZON.MAUI.ViewModels
             }
         }
 
+        public void RefreshInventoryList()
+        {
+            NotifyPropertyChanged(nameof(InventoryItems));
+        }
 
-       
+
     }
 }
