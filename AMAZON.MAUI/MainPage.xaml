@@ -9,21 +9,18 @@
             Spacing="25">
 
             <Label
-                Text="Hello, World!"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+                Text="Amazon"
+                Style="{StaticResource Headline}" />
 
             <Label
-                Text="AMAZONNNNNN"
+                Text="            "
                 Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
 
             <Button
                 x:Name="CounterBtn"
                 Text="Manage Inventory" 
                 Command="{Binding NavigateToInventoryCommand}" 
-                SemanticProperties.Hint="       "
                 HorizontalOptions="Fill"
                 Clicked="InventoryClicked"/>
             

@@ -11,7 +11,7 @@ namespace Amazon.Library.Services
         }
 
         private static readonly InventoryServiceProxy instance = new InventoryServiceProxy();
-        private List<Product> products = new List<Product> { new Product { Id = 1, Name = "Raybans", Description = "Sunglasses", Price = 49.99M, Quantity = 16 },
+        private List<Product> products = new List<Product> { new Product { Id = 1, Name = "Ray-Ban", Description = "Sunglasses", Price = 49.99M, Quantity = 16 },
                                                              new Product { Id = 2, Name = "KitchenAid Set", Description = "Kitchenware set", Price = 27.49M, Quantity = 4 },
                                                              new Product { Id = 3, Name = "Bosch Spark Plugs", Description = "V6 sparkplugs", Price = 69.99M, Quantity = 300 },
                                                              new Product { Id = 4, Name = "Rocking Chair", Description = "Solid wood chair", Price = 49.99M, Quantity = 1 }};
