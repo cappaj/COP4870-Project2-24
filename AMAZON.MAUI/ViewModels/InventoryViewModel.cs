@@ -89,7 +89,7 @@ namespace AMAZON.MAUI.ViewModels
 
             NotifyPropertyChanged("Edit");
 
-            Shell.Current.GoToAsync($"//InventoryDetailPage?pid={id}");
+            Shell.Current.GoToAsync($"//InventoryDetailPage?ProductId={id}");
 
         }
 
