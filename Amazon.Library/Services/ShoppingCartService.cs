@@ -91,5 +91,21 @@ namespace Amazon.Library.Services
     {
         public Product Product { get; set; }
         public int Quantity { get; set; }
+
+        public CartItem(Product p)
+        {
+
+        Product = p;
+            Quantity = 1;
+
+        }
+
+        public CartItem() { }
+
+    
     }
-}
+
+    }
+
+
+   

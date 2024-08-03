@@ -10,42 +10,42 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Label Text="{Binding Path= Model.Id}"/>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition Width="8*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid Row="0" Column="0">
-                                <Label Text="Name"/>
-                            </Grid>
-                            <Grid Row="1" Column="0">
-                                <Label Text="Description"/>
-                            </Grid>
-                            <Grid Row="2" Column="0">
-                                <Label Text="Price"/>
-                            </Grid>
-                            <Grid Row="3" Column="0">
-                                <Label Text="Quantity"/>
-                            </Grid>
-                            <Grid Row="0" Column="1">
-                                <Entry Text="{Binding Path = Model.Name, Mode=TwoWay}"/>
-                            </Grid>
-                            <Grid Row="1" Column="1">
-                                <Entry Text="{Binding Path = Model.Description, Mode=TwoWay}"/>
-                            </Grid>
-                            <Grid Row="2" Column="1">
-                                <Entry Text="{Binding Path=Model.Price, Mode=TwoWay}"/>
-                            </Grid>
-                            <Grid Row="3" Column="1">
-                                <Entry Text="{Binding Path = Model.Quantity, Mode=TwoWay}"/>
-                            </Grid>
-                        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="8*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Row="0" Column="0">
+                <Label Text="Name"/>
+            </Grid>
+            <Grid Row="1" Column="0">
+                <Label Text="Description"/>
+            </Grid>
+            <Grid Row="2" Column="0">
+                <Label Text="Price"/>
+            </Grid>
+            <Grid Row="3" Column="0">
+                <Label Text="Quantity"/>
+            </Grid>
+            <Grid Row="0" Column="1">
+                <Entry Text="{Binding Path = Model.Name, Mode=TwoWay}"/>
+            </Grid>
+            <Grid Row="1" Column="1">
+                <Entry Text="{Binding Path = Model.Description, Mode=TwoWay}"/>
+            </Grid>
+            <Grid Row="2" Column="1">
+                <Entry Text="{Binding Path=Model.Price, Mode=TwoWay}"/>
+            </Grid>
+            <Grid Row="3" Column="1">
+                <Entry Text="{Binding Path = Model.Quantity, Mode=TwoWay}"/>
+            </Grid>
+        </Grid>
         <Button Text="Ok" Clicked="AddClicked"/>
         <Button Text="Cancel" Clicked="BackClicked"/>
         <Button Text="Return to Main Page" Clicked="ExitClicked"/>

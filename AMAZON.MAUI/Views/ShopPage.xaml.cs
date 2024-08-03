@@ -13,4 +13,9 @@ public partial class ShopPage : ContentPage
     {
         Shell.Current.GoToAsync("//MainPage");
     }
+
+    private void OnArriving(object sender, NavigatedToEventArgs e)
+    {
+        
+    }
 }

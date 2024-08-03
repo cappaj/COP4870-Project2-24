@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Amazon.Library.Models;
+using Amazon.Library.Services;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -10,35 +12,75 @@ namespace AMAZON.MAUI.ViewModels
 {
     public class ShopViewModel : BaseViewModel
     {
-        public ObservableCollection<InventoryItem> AvailableItems { get; }
-        public ObservableCollection<InventoryItem> CartItems { get; }
+        public ObservableCollection<InventoryItem> AvailableItems
+        {
+            get; set;
+        }
+        public ObservableCollection<CartItemViewModel> CartItems
+        {
+            get
+            {
+                return new ObservableCollection<CartItemViewModel>
+                    (ShoppingCartService.Instance.CartItems.Select(c => new CartItemViewModel(c)).ToList());
+            }
+        }
 
         public ICommand AddToCartCommand { get; }
 
         public ShopViewModel()
         {
-            AvailableItems = new ObservableCollection<InventoryItem>
+            AvailableItems = new ObservableCollection<InventoryItem>();
+
+            foreach (Product p in InventoryServiceProxy.Instance.Products)
             {
-                new InventoryItem { Name = " ", Price = 00.0 },
-                new InventoryItem { Name = " ", Price = 00.0 }
-            };
+                {
+                    AvailableItems.Add(new InventoryItem(p));
+                }
 
-            CartItems = new ObservableCollection<InventoryItem>();
-            AddToCartCommand = new Command<InventoryItem>(OnAddToCart);
+
+                // CartItems = new ObservableCollection<InventoryItem>();
+                /*
+                            foreach(CartItem p in ShoppingCartService.Instance.CartItems)
+                            {
+                                CartItems.Add(new InventoryItem(p));
+
+                            }
+                */
+
+                //     AddToCartCommand = new Command<InventoryItem>(OnAddToCart);
+            }
+            /*
+            private void OnAddToCart(InventoryItem item)
+            {
+                CartItems.Add(item);
+                NotifyPropertyChanged(nameof(TotalPrice));
+            }
+
+            public double TotalPrice => CartItems.Sum(item => item.Price);
+            */
         }
 
-        private void OnAddToCart(InventoryItem item)
+        public class InventoryItem
         {
-            CartItems.Add(item);
-            NotifyPropertyChanged(nameof(TotalPrice));
+            public string Name { get; set; }
+            public double Price { get; set; }
+
+            public int ItemQuantity { get; set; }
+
+            public InventoryItem() { }
+            public InventoryItem(Product p)
+            {
+                Name = p.Name;
+                Price = (double)p.Price;
+                ItemQuantity = p.Quantity;
+            }
+
+            public InventoryItem(CartItem c)
+            {
+                Name = c.Product.Name;
+                Price = (double)c.Product?.Price;
+            }
+
         }
-
-        public double TotalPrice => CartItems.Sum(item => item.Price);
-    }
-
-   public class InventoryItem
-    {
-        public string Name { get; set; }
-        public double Price { get; set; }
     }
 }

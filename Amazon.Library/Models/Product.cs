@@ -39,7 +39,7 @@
             return $"{Id}. {Name}\t{Description}\t\t${Price}\t\t{Quantity}";
         }
 
-
+        public bool IsBOGO {  get; set; }
     }
 
     public class Receipt

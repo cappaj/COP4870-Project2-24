@@ -68,6 +68,11 @@ namespace Amazon.Library.Services
             return Products.FirstOrDefault(p => p.Id == pid);
         }
 
+        public Product? GetbyName(string name)
+        {
+            return Products.FirstOrDefault(x => x.Name == name);
+        }
+
     }
 }
 
