@@ -12,9 +12,13 @@ namespace AMAZON.MAUI.ViewModels
 {
     public class ShopViewModel : BaseViewModel
     {
-        public ObservableCollection<InventoryItem> AvailableItems
+        public ObservableCollection<InventoryViewModel> AvailableItems
         {
-            get; set;
+            get
+            {
+                return new ObservableCollection<InventoryViewModel>
+                    (InventoryServiceProxy.Instance.Products.Where(s => s.Quantity > 0).Select(c => new InventoryViewModel(c)).ToList());
+            }
         }
         public ObservableCollection<CartItemViewModel> CartItems
         {
@@ -29,13 +33,8 @@ namespace AMAZON.MAUI.ViewModels
 
         public ShopViewModel()
         {
-            AvailableItems = new ObservableCollection<InventoryItem>();
 
-            foreach (Product p in InventoryServiceProxy.Instance.Products)
-            {
-                {
-                    AvailableItems.Add(new InventoryItem(p));
-                }
+         
 
 
                 // CartItems = new ObservableCollection<InventoryItem>();
@@ -48,8 +47,8 @@ namespace AMAZON.MAUI.ViewModels
                 */
 
                 //     AddToCartCommand = new Command<InventoryItem>(OnAddToCart);
-            }
-            /*
+        /*    
+            
             private void OnAddToCart(InventoryItem item)
             {
                 CartItems.Add(item);
@@ -58,6 +57,15 @@ namespace AMAZON.MAUI.ViewModels
 
             public double TotalPrice => CartItems.Sum(item => item.Price);
             */
+        }
+        public void RefreshAvailableItemList()
+        {
+            NotifyPropertyChanged(nameof(AvailableItems));
+        }
+
+        public void RefreshCartList()
+        {
+            NotifyPropertyChanged(nameof(CartItems));
         }
 
         public class InventoryItem

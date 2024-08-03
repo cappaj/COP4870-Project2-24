@@ -15,10 +15,10 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <Grid Column="0">
-                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding Model.Name}"/>
                             </Grid>
                             <Grid Column="1">
-                                <Label Text="{Binding Price}"/>
+                                <Label Text="{Binding Model.Price}"/>
                             </Grid>
                             <Grid Column="2">
                                 <Button Text="Add to Cart" Command="{Binding AddToCartCommand}"/>
