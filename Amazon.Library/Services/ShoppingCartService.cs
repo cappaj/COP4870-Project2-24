@@ -70,8 +70,18 @@ namespace Amazon.Library.Services
 
             foreach (var item in cartItems)
             {
+                if (item.Product.BuyOneGetOneFree)
+                {
+                  
+                    int effectiveQuantity = (item.Quantity / 2) + (item.Quantity % 2); // Pay for half and get the extra
+                    subtotal += item.Product.Price * effectiveQuantity;
+                }
+                else
+                {
+                    subtotal += item.Product.Price * item.Quantity;
+                }
+
                 receipt.AppendLine($"{item.Product.Name} - {item.Product.Description}, Price: {item.Product.Price:C}, Quantity: {item.Quantity}");
-                subtotal += item.Product.Price * item.Quantity;
             }
 
             decimal taxes = subtotal * 0.07M;
@@ -94,18 +104,11 @@ namespace Amazon.Library.Services
 
         public CartItem(Product p)
         {
-
-        Product = p;
+            Product = p;
             Quantity = 1;
-
         }
 
         public CartItem() { }
-
-    
     }
+}
 
-    }
-
-
-   
