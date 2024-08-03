@@ -3,7 +3,7 @@ using Amazon.Library.Services;
 using System.ComponentModel;
 using System.Windows.Input;
 
-public class WishListViewModel : INotifyPropertyChanged
+public class WishListViewModel : BaseViewModel
 {
     private WishListService _wishListService = WishListService.Instance;
 
@@ -16,13 +16,13 @@ public class WishListViewModel : INotifyPropertyChanged
     private void AddCart(ShoppingCart cart)
     {
         _wishListService.AddCart(cart);
-        OnPropertyChanged(nameof(Carts));
+        NotifyPropertyChanged(nameof(Carts));
     }
 
     private void RemoveCart(ShoppingCart cart)
     {
         _wishListService.RemoveCart(cart);
-        OnPropertyChanged(nameof(Carts));
+        NotifyPropertyChanged(nameof(Carts));
     }
 
     private void CheckoutAllCarts()
@@ -31,9 +31,5 @@ public class WishListViewModel : INotifyPropertyChanged
         
     }
 
-    public event PropertyChangedEventHandler PropertyChanged;
-    protected void OnPropertyChanged(string propertyName)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
+  
 }
