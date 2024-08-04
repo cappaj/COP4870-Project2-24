@@ -1,0 +1,27 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AMAZON.MAUI.ViewModels"
+             x:Class="AMAZON.MAUI.Views.ConfigurePage">
+
+    <ContentPage.BindingContext>
+        <local:ConfigureViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="20">
+        <Label Text="Configure Settings" FontSize="24" HorizontalOptions="Center" />
+
+        <Label Text="Tax Rate:" />
+        <Entry Placeholder="Enter Tax Rate" Keyboard="Numeric" Text="{Binding TaxRate}" />
+
+        <Label Text="Select Product:" />
+        <Picker ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" ItemDisplayBinding="{Binding Name}" />
+
+        <Label Text="Markdown Amount:" />
+        <Entry Placeholder="Enter Markdown Amount" Keyboard="Numeric" Text="{Binding MarkdownAmount}" />
+
+        <Label Text="Buy One Get One Free:" />
+        <Switch IsToggled="{Binding SelectedProduct.BuyOneGetOneFree}" />
+
+        <Button Text="Back" Clicked="BackClicked" />
+    </StackLayout>
+</ContentPage>

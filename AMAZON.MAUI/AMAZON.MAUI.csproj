@@ -73,10 +73,16 @@
 	  <Compile Update="Views\ShopPage.xaml.cs">
 	    <DependentUpon>ShopPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\WishListPage.xaml.cs">
+	    <DependentUpon>WishListPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\CheckoutView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ConfigurePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\InventoryDetailPage.xaml">
@@ -88,7 +94,7 @@
 	  <MauiXaml Update="Views\ShopPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\WishListView.xaml">
+	  <MauiXaml Update="Views\WishListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
